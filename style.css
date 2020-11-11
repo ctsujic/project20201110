@@ -7,7 +7,6 @@ body{
 }
 .header{
   width: 1024px;
-  height: 380px;
   margin: 0 auto;  
   text-align: center;
 }
@@ -71,8 +70,49 @@ body{
 }
 
 .main{
-  height: 200px;
+  margin: 0 auto;  
+  text-align: center;
 }
+.main .title-main{
+  font-family: SFNSDisplay;
+  font-size: 36px;
+  color: #8A82CC;
+}
+.main .list-main{
+  float: left;
+  margin: 36px 16px;
+  width: 464px;
+  height: 273px;
+  background: #FFFFFF;
+  text-align: left;
+}
+.list-main .img{
+  width: 464px;
+  height: 155px;
+  background-image: url("http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 464px auto;
+  color: #FFFFFF;
+}
+.img .img-title{
+  margin: 0;
+  padding-top: 103px;
+  width: 464px;
+  height: 52px;
+  background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.54) 100%);
+}
+.title-24px{
+  float: left;
+  padding-left: 22px;
+  font-size: 24px;
+}
+.title-16px{
+  float: right;
+  padding-right: 22px;
+  font-size: 16px;
+}
+.clear{ clear:both}
 
 .footer{
   margin: 0 auto;
@@ -83,6 +123,5 @@ body{
   color: #FFFFFF;
 }
 .footer p{
-
   font-size: 14px;
 }
