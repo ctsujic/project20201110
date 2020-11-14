@@ -9,15 +9,20 @@
 <body>
   <div class="header">
     <p class="title">高雄旅遊資訊</p>
-    <select name="" id="">
+    <select id="selectName">
       <option>--請選擇行政區--</option>
+      <option value="苓雅區">苓雅區</option>
+      <option value="三民區">三民區</option>
+      <option value="新興區">新興區</option>
+      <option value="茂林區">茂林區</option>
     </select>
+    
     <div class="menu">
       <p class="title-menu">熱門行政區</p>
-      <input type="button" value="苓雅區" style="background: #8A82CC;">
-      <input type="button" value="三民區" style="background: #FFA782;">
-      <input type="button" value="新興區" style="background: #F5D105;">
-      <input type="button" value="鹽埕區" style="background: #559AC8;">
+      <input class="menuBtn1" type="button" value="苓雅區" style="background: #8A82CC;">
+      <input class="menuBtn2" type="button" value="三民區" style="background: #FFA782;">
+      <input class="menuBtn3" type="button" value="新興區" style="background: #F5D105;">
+      <input class="menuBtn4" type="button" value="茂林區" style="background: #559AC8;">
     </div>
     <div class="icon-menu">
       <hr>
@@ -25,33 +30,9 @@
   </div>
 
   <div class="main">
-    <p class="title-main">三民區</p>
-    <div class="list-main">
-      <div class="img">
-        <div class="img-title">
-          <p class="title-24px">高雄願景館</p>
-          <p class="title-16px">三民區</p>
-          <p style="clear:both"></p>
-        </div>        
-      </div>
-        <p class="clock"><img src="img/icons_clock.png" alt=""> 週二至週日10:00-18:00，每週一公休</p>
-        <p class="pin"><img src="img/icons_pin.png" alt=""> 高雄市三民區建國二路318號</p>
-        <p class="phone"><img src="img/icons_phone.png" alt=""> 886-7-2363357</p>
-        <p class="tag"><img src="img/icons_tag.png" alt=""> 免費參觀</p>
-    </div>
-
-    <div class="list-main">
-      <div class="img">
-        <div class="img-title">
-          <p class="title-24px">高雄願景館</p>
-          <p class="title-16px">三民區</p>
-          <p style="clear:both"></p>
-        </div>        
-      </div>
-        <p class="clock"><img src="img/icons_clock.png" alt=""> 週二至週日10:00-18:00，每週一公休</p>
-        <p class="pin"><img src="img/icons_pin.png" alt=""> 高雄市三民區建國二路318號</p>
-        <p class="phone"><img src="img/icons_phone.png" alt=""> 886-7-2363357</p>
-        <p class="tag"><img src="img/icons_tag.png" alt=""> 免費參觀</p>
+    <p class="title-main">請先選擇區域</p>
+    <div class="list">
+      
     </div>
     
     <p style="clear:both"></p>
@@ -65,7 +46,8 @@
     <p style="padding-top: 15px;">高雄旅遊網</p>
     <p style="color: #FFD366;">資料來源：高雄市政府</p>
   </div>
-
+  
+  
   <script src="all.js"></script>
 </body>
 </html>

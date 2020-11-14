@@ -83,14 +83,13 @@ body{
   float: left;
   margin: 0 8px 36px 8px;
   width: 464px;
-  height: 273px;
-  background: #FFFFFF;
   text-align: left;
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
 }
 .list-main .img{
   width: 464px;
-  height: 155px;
-  background-image: url("http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960");
+  height: 155px;  
   background-repeat: no-repeat;
   background-position: center;
   background-size: 464px auto;
@@ -114,9 +113,12 @@ body{
   padding-right: 22px;
   font-size: 16px;
 }
-.clear{ clear:both}
 .list-main p{
   padding: 0 24px;
+}
+
+.conten p{
+  font-size: 16px;
 }
 .phone{
   float: left;
