@@ -140,3 +140,18 @@ body{
 .footer p{
   font-size: 14px;
 }
+
+.page td{
+  width: 40px;
+  text-align: center;
+  font-family: 'AppleSystemUIFont';
+  font-size: 14px;
+  color: #4A4A4A;
+}
+.page a{
+  color: #4A4A4A;
+  text-decoration: none;
+}
+.page a:hover {
+  color: #559AC8;
+}

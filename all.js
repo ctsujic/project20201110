@@ -797,7 +797,7 @@ var data = [
     Name: "薛家古厝",
     Level: null,
     Picture1: "http://khh.travel/FileArtPic.ashx?id=1085&w=1280&h=960",
-    Toldescribe: "位於左營區?北里的薛家古厝是高雄市少數保存完整、三進院落帶護龍伸手的閩南三合院紅磚建築。1820年由薛姓祖先建構的第一進房舍是用石灰、黏土及土角磚等老式建材興建，到90年後(1910年)因為家族興旺已發展到第三進的紅磚及半屏山石灰岩建材，並拓展到1400坪的規模。薛家古厝結構工法嚴謹，雖無仕宦人家的亭台樓閣，但木雕斗拱山牆花窗自有傳統民宅建築的宜人韻味，走在仿佛跌入舊時光的古老宅第，先人在二百年前於左營農墾、糖?時期之蓽路藍縷在每個角落浮現，極具人文及歷史的意義，也顯示台灣建築歷史的縱深。也因為薛家古厝的珍貴與人文價值，曾入選高雄市歷史建築十景，也是高雄市的市定古蹟。",
+    Toldescribe: "位於左營區?北里的薛家古厝是高雄市少數保存完整、三進院落帶護龍伸手的閩南三合院紅磚建築。1820年由薛姓祖先建構的第一進房舍是用石灰、黏土及土角磚等老式建材興建，到90年後(1910年)因為家族興旺已發展到第三進的紅磚及半屏山石灰岩建材，並拓展到1400坪的規模。薛家古厝結構工法嚴謹，雖無仕宦人家的亭台樓閣，但木雕斗拱山牆花��自有傳統民宅建築的宜人韻味，走在仿佛跌入舊時光的古老宅第，先人在二百年前於左營農墾、糖?時期之蓽路藍縷在每個角落浮現，極具人文及歷史的意義，也顯示台灣建築歷史的縱深。也因為薛家古厝的珍貴與人文價值，曾入選高雄市歷史建築十景，也是高雄市的市定古蹟。",
     Changetime: "2015-06-03T12:20:57",
     Tel: "886-7-7995678",
     Picdescribe1: "薛家古厝",
@@ -2608,8 +2608,6 @@ var titleMain = document.querySelector('.title-main');
 var list = document.querySelector('.list');
 
 
-
-// 按下中間按鈕
 var selectName = document.getElementById('selectName'); //下拉式選單
 var menuBtn1 = document.querySelector('.menuBtn1'); //苓雅區
 var menuBtn2 = document.querySelector('.menuBtn2'); //三民區
@@ -2632,59 +2630,38 @@ Tel  = 電話
 Ticketinfo = 免費參觀
 */
 function selectNamechange(e){
-  var zone = selectName.value;
-  titleMain.innerHTML = zone;
-  var str = '';
-  for (var i = 0 ; i < data.length ; i++){
-    if( data[i].Zone == zone ){
-      var url = data[i].Picture1;
-      str+='<div class="list-main"><div class="img" style="background-image: url('+url+');"><div class="img-title"><p class="title-24px">'+data[i].Name+'</p><p class="title-16px">'+data[i].Zone+'</p><p style="clear:both"></p></div></div><div class="conten"><p class="clock"><img src="img/icons_clock.png"> '+data[i].Opentime+'</p><p class="pin"><img src="img/icons_pin.png"> '+data[i].Add+'</p><p class="phone"><img src="img/icons_phone.png"> '+data[i].Tel+'</p><p class="tag"><img src="img/icons_tag.png"> '+data[i].Ticketinfo+'</p></div></div>';
-      list.innerHTML = str;
-    }
-  }
+  var txt = selectName.value;
+  txtList(txt);
 }
 
 function menuBtn1click(e){
-  titleMain.innerHTML = '苓雅區';
-  var str = '';
-  for (var i = 0 ; i < data.length ; i++){
-    if( data[i].Zone == '苓雅區' ){
-      var url = data[i].Picture1;
-      str+='<div class="list-main"><div class="img" style="background-image: url('+url+');"><div class="img-title"><p class="title-24px">'+data[i].Name+'</p><p class="title-16px">'+data[i].Zone+'</p><p style="clear:both"></p></div></div><div class="conten"><p class="clock"><img src="img/icons_clock.png"> '+data[i].Opentime+'</p><p class="pin"><img src="img/icons_pin.png"> '+data[i].Add+'</p><p class="phone"><img src="img/icons_phone.png"> '+data[i].Tel+'</p><p class="tag"><img src="img/icons_tag.png"> '+data[i].Ticketinfo+'</p></div></div>';
-      list.innerHTML = str;
-    }
-  }
+  var txt = e.target.defaultValue;
+  txtList(txt);
 }
+
 function menuBtn2click(e){
-  titleMain.innerHTML = '三民區';
-  var str = '';
-  for (var i = 0 ; i < data.length ; i++){
-    if( data[i].Zone == '三民區' ){
-      var url = data[i].Picture1;
-      str+='<div class="list-main"><div class="img" style="background-image: url('+url+');"><div class="img-title"><p class="title-24px">'+data[i].Name+'</p><p class="title-16px">'+data[i].Zone+'</p><p style="clear:both"></p></div></div><div class="conten"><p class="clock"><img src="img/icons_clock.png"> '+data[i].Opentime+'</p><p class="pin"><img src="img/icons_pin.png"> '+data[i].Add+'</p><p class="phone"><img src="img/icons_phone.png"> '+data[i].Tel+'</p><p class="tag"><img src="img/icons_tag.png"> '+data[i].Ticketinfo+'</p></div></div>';
-      list.innerHTML = str;
-    }
-  }
+  var txt = e.target.defaultValue;
+  txtList(txt);
 }
 function menuBtn3click(e){
-  titleMain.innerHTML = '新興區';
-  var str = '';
-  for (var i = 0 ; i < data.length ; i++){
-    if( data[i].Zone == '新興區' ){
-      var url = data[i].Picture1;
-      str+='<div class="list-main"><div class="img" style="background-image: url('+url+');"><div class="img-title"><p class="title-24px">'+data[i].Name+'</p><p class="title-16px">'+data[i].Zone+'</p><p style="clear:both"></p></div></div><div class="conten"><p class="clock"><img src="img/icons_clock.png"> '+data[i].Opentime+'</p><p class="pin"><img src="img/icons_pin.png"> '+data[i].Add+'</p><p class="phone"><img src="img/icons_phone.png"> '+data[i].Tel+'</p><p class="tag"><img src="img/icons_tag.png"> '+data[i].Ticketinfo+'</p></div></div>';
-      list.innerHTML = str;
-    }
-  }
+  var txt = e.target.defaultValue;
+  txtList(txt);
 }
 function menuBtn4click(e){
-  titleMain.innerHTML = '茂林區';
+  var txt = e.target.defaultValue;
+  txtList(txt);
+}
+
+function txtList(txt){  
+  titleMain.innerHTML = txt;
   var str = '';
   for (var i = 0 ; i < data.length ; i++){
-    if( data[i].Zone == '茂林區' ){
-      var url = data[i].Picture1;
-      str+='<div class="list-main"><div class="img" style="background-image: url('+url+');"><div class="img-title"><p class="title-24px">'+data[i].Name+'</p><p class="title-16px">'+data[i].Zone+'</p><p style="clear:both"></p></div></div><div class="conten"><p class="clock"><img src="img/icons_clock.png"> '+data[i].Opentime+'</p><p class="pin"><img src="img/icons_pin.png"> '+data[i].Add+'</p><p class="phone"><img src="img/icons_phone.png"> '+data[i].Tel+'</p><p class="tag"><img src="img/icons_tag.png"> '+data[i].Ticketinfo+'</p></div></div>';
+    if( data[i].Zone == txt ){
+      str+='<div class="list-main"><div class="img" style="background-image: url('+data[i].Picture1+');"><div class="img-title"><p class="title-24px">'+data[i].Name+'</p><p class="title-16px">'+data[i].Zone+'</p><p style="clear:both"></p></div></div><div class="conten"><p class="clock"><img src="img/icons_clock.png"> '+data[i].Opentime+'</p><p class="pin"><img src="img/icons_pin.png"> '+data[i].Add+'</p><p class="phone"><img src="img/icons_phone.png"> '+data[i].Tel+'</p><p class="tag"><img src="img/icons_tag.png"> '+data[i].Ticketinfo+'</p></div></div>';
       list.innerHTML = str;
+    }
+    if(str == ''){
+      list.innerHTML = '此區域無資料';
     }
   }
 }
