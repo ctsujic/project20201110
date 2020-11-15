@@ -2676,6 +2676,7 @@ function txtList(txt){
       list.innerHTML = '此區域無資料';
     }
   }
+  updataList(txt);
 }
 
 //以下處理下拉式選單
@@ -2692,4 +2693,16 @@ var selectOption = '';
 for(var n = 0; n<arrZone.length;n++){
   selectOption+= '<option value="'+arrZone[n]+'">'+arrZone[n]+'</option>';
   selectName.innerHTML = '<option>--請選擇行政區--</option>'+selectOption;
+};
+
+function updataList(txt){
+  selectOption = '';//先清空option
+  for(var n = 0; n < arrZone.length ; n++){
+    if(txt == arrZone[n]){
+      selectOption+= '<option value="'+arrZone[n]+'" selected>'+arrZone[n]+'</option>';
+    }else{
+      selectOption+= '<option value="'+arrZone[n]+'">'+arrZone[n]+'</option>';
+    }
+    selectName.innerHTML = '<option>--請選擇行政區--</option>'+selectOption;
+  };
 }
