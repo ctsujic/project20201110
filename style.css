@@ -147,7 +147,8 @@ body{
   text-align: center;
   font-family: 'AppleSystemUIFont';
   font-size: 14px;
-  color: #4A4A4A;
+  line-height: 30px;
+  color: #4A4A4A;  
 }
 .page a{
   color: #4A4A4A;
@@ -156,3 +157,11 @@ body{
 .page a:hover {
   color: #559AC8;
 }
+
+.goTop{
+  display:block;
+  bottom:105px;
+  right:28px;
+  position:fixed;
+}
+
