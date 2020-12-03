@@ -61,6 +61,7 @@ body{
   padding-top: 7px;
   width: 900px;
   height: 26px;
+  z-index: -1;
   background-image: url("img/icons_down.png");
   background-repeat: no-repeat;
   background-position: center;

@@ -18,6 +18,16 @@ odata.onload = function(){
   data = odata.result.records;
   txtList('美濃區');//預設網頁載入時
 }
+/* 助教的寫法
+fetch('https://raw.githubusercontent.com/hsiangfeng/JSHomeWork/master/JSON/datastore_search.json',{method:'get'})
+.then((response)=>{
+    return response.json();
+}).then((data)=>{
+  tempItem = data.result.records;
+  getMenus(tempItem);
+})
+*/
+
 
 let titleMain = document.querySelector('.title-main');
 let list = document.querySelector('.list');
@@ -66,7 +76,6 @@ Ticketinfo = 免費參觀
 
 function txtList(txt){  
   titleMain.innerHTML = txt; // 中間小標題 顯示 xx區
-  let str = '';  
   sdata = [];//清空陣列放新的篩選後的區域資料
   // 此為for寫法，下面的displayData(data)有forEach。 
   // 筆記做比對用
@@ -74,32 +83,30 @@ function txtList(txt){
     if( data[i].Zone == txt ){
       sdata.push(data[i]);//將篩選後的區域資料存到sdata陣列裡
     
-      let ticTxt = '';//如果沒有免費參觀的就不顯示
-      if(data[i].Ticketinfo !== ''){
-        ticTxt = '<img src="img/icons_tag.png"> '+data[i].Ticketinfo;
-      }
-      str+=`
-      <div class="list-main">
-        <div class="img" style="background-image: url(${data[i].Picture1});">
-          <div class="img-title">
-            <p class="title-24px">${data[i].Name}</p>
-            <p class="title-16px">${data[i].Zone}</p>
-            <p style="clear:both"></p>
-          </div>
-        </div>
-        <div class="conten">
-          <p class="clock"><img src="img/icons_clock.png"> ${data[i].Opentime}</p>
-          <p class="pin"><img src="img/icons_pin.png"> ${data[i].Add}</p>
-          <p class="phone"><img src="img/icons_phone.png"> ${data[i].Tel}</p>
-          <p class="tag">${ticTxt}</p>
-        </div>
-      </div>`;
-      list.innerHTML = str;
-    }
-    if(str == ''){
-      list.innerHTML = '此區域無資料';
+      // let ticTxt = '';//如果沒有免費參觀的就不顯示
+      // if(data[i].Ticketinfo !== ''){
+      //   ticTxt = '<img src="img/icons_tag.png"> '+data[i].Ticketinfo;
+      // }
+      // str+=`
+      // <div class="list-main">
+      //   <div class="img" style="background-image: url(${data[i].Picture1});">
+      //     <div class="img-title">
+      //       <p class="title-24px">${data[i].Name}</p>
+      //       <p class="title-16px">${data[i].Zone}</p>
+      //       <p style="clear:both"></p>
+      //     </div>
+      //   </div>
+      //   <div class="conten">
+      //     <p class="clock"><img src="img/icons_clock.png"> ${data[i].Opentime}</p>
+      //     <p class="pin"><img src="img/icons_pin.png"> ${data[i].Add}</p>
+      //     <p class="phone"><img src="img/icons_phone.png"> ${data[i].Tel}</p>
+      //     <p class="tag">${ticTxt}</p>
+      //   </div>
+      // </div>`;
+      // list.innerHTML = str;
     }
   }
+
   pagination(sdata,1);//將sdata陣列、預設第1頁傳入分頁處理
   updataList(txt);//同步更新下拉選單選的區域
 }
@@ -201,6 +208,9 @@ function displayData(data) {
       </div>`;
   });
   list.innerHTML = str;
+  if(str === ''){
+    list.innerHTML = '此區域無資料';
+  }
 };
 
 //顯示分頁按鈕
@@ -209,9 +219,9 @@ function pageBtnShow(page){
   const total = page.pageTotal;  
   if(page.hasPage) { //如果當前的頁數大於1，Prev 的按鈕就可以按
     str += `<td><a href="#" data-page="${Number(page.currentPage) - 1}">Prev</a></td>`;
-  } else {
+  } /*else { //否則不顯示
     str += `<td disabled><span>Prev</span></td>`;
-  }  
+  }  */
 
   for(let i = 1; i <= total; i++){
     if(Number(page.currentPage) === i) {
@@ -223,9 +233,9 @@ function pageBtnShow(page){
 
   if(page.hasNext) {//如果當前的頁數小於總頁數，Next 的按鈕就可以按
     str += `<td><a href="#" data-page="${Number(page.currentPage) + 1}">Next</a></td>`;
-  } else {
+  } /*else { //否則不顯示
     str += `<td disabled><span>Next</span></td>`;
-  }
+  }*/
   pageid.innerHTML = str;
 }
 
@@ -238,3 +248,11 @@ function switchPage(e){
 };
 
 pageid.addEventListener('click', switchPage);
+
+
+let goTop = document.querySelector('.goTop');
+goTop.addEventListener('click', pagegoTop);
+function pagegoTop(){
+  document.body.scrollTop=0;
+  document.documentElement.scrollTop=0;
+}
