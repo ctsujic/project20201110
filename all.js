@@ -82,28 +82,6 @@ function txtList(txt){
   for (let i = 0 ; i < data.length ; i++){
     if( data[i].Zone == txt ){
       sdata.push(data[i]);//將篩選後的區域資料存到sdata陣列裡
-    
-      // let ticTxt = '';//如果沒有免費參觀的就不顯示
-      // if(data[i].Ticketinfo !== ''){
-      //   ticTxt = '<img src="img/icons_tag.png"> '+data[i].Ticketinfo;
-      // }
-      // str+=`
-      // <div class="list-main">
-      //   <div class="img" style="background-image: url(${data[i].Picture1});">
-      //     <div class="img-title">
-      //       <p class="title-24px">${data[i].Name}</p>
-      //       <p class="title-16px">${data[i].Zone}</p>
-      //       <p style="clear:both"></p>
-      //     </div>
-      //   </div>
-      //   <div class="conten">
-      //     <p class="clock"><img src="img/icons_clock.png"> ${data[i].Opentime}</p>
-      //     <p class="pin"><img src="img/icons_pin.png"> ${data[i].Add}</p>
-      //     <p class="phone"><img src="img/icons_phone.png"> ${data[i].Tel}</p>
-      //     <p class="tag">${ticTxt}</p>
-      //   </div>
-      // </div>`;
-      // list.innerHTML = str;
     }
   }
 
